@@ -3,11 +3,21 @@
 <p><%= @player_2_name %> HP: <%= @player_2_hp %>.</p>
 
 <form action="/play" method="post">
-  <input type="submit" value="Attack">
+  <input type="submit" value="<%= @attacker_name %> attacks!">
 </form>
 
 <% if @attacked %>
 
-<p><%= @player_1_name %> attacked <%= @player_2_name %>.</p>
+<p><%= @victim_name %> attacked <%= @attacker_name %>.</p>
+
+<% end %>
+
+<% if @player_2_hp == 0 %>
+
+<p><%= @player_2_name %> has lost the game!</p>
+
+<% elsif  @player_1_hp == 0 %>
+
+<p><%= @player_1_name %> has lost the game!</p>
 
 <% end %>
