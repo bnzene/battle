@@ -14,7 +14,7 @@ describe Player do
     end
   end
 
-  describe '#receive_attack' do
+  describe '#receive_damage' do
     it 'reduces victim\'s HP' do
       expect {player_2.receive_damage}.to change {player_2.hp}.by -10
     end

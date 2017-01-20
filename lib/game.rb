@@ -10,4 +10,9 @@ attr_accessor :player_1, :player_2
   def attack(player)
     player.receive_damage
   end
+
+  def switch_players
+    @player_1, @player_2 = @player_2, @player_1
+  end
+
 end
