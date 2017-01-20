@@ -23,4 +23,19 @@ describe Game do
       expect(game.current_victim).to eq(player_1)
     end
   end
+
+  describe '#game_over?' do
+    it 'returns true if one player has lost' do
+      allow(player_2).to receive(:hp).and_return(0)
+      expect(game.game_over?).to eq true
+    end
+  end
+
+  describe '#loser' do
+    it 'returns name of the loser' do
+      allow(player_1).to receive(:hp)
+      allow(player_2).to receive(:hp).and_return(0)
+      expect(game.loser).to eq(player_2)
+    end
+  end
 end

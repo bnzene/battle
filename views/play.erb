@@ -12,12 +12,10 @@
 
 <% end %>
 
-<% if @player_2_hp == 0 %>
+<% if @game_over %>
 
-<p><%= @player_2_name %> has lost the game!</p>
+<p>Game over.</p>
 
-<% elsif  @player_1_hp == 0 %>
-
-<p><%= @player_1_name %> has lost the game!</p>
+<p><%= @loser.name %> has lost the game!</p>
 
 <% end %>
