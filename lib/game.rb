@@ -10,7 +10,7 @@ attr_accessor :player_1, :player_2, :current_attacker, :current_victim
   end
 
   def attack(player)
-    @current_victim.receive_damage
+    player.receive_damage
   end
 
   def switch_players
@@ -24,6 +24,14 @@ attr_accessor :player_1, :player_2, :current_attacker, :current_victim
 
   def loser
     @current_attacker
+  end
+
+  def self.create(player_1, player_2)
+    @game = Game.new(player_1, player_2)
+  end
+
+  def self.instance
+    @game
   end
 
 end
