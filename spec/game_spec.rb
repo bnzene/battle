@@ -19,8 +19,8 @@ describe Game do
   describe '#switch_players' do
     it 'switches player' do
       game.switch_players
-      expect(game.player_1).to eq(player_2)
-      expect(game.player_2).to eq(player_1)
+      expect(game.current_attacker).to eq(player_2)
+      expect(game.current_victim).to eq(player_1)
     end
   end
 end
