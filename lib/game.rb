@@ -23,7 +23,7 @@ attr_accessor :player_1, :player_2, :current_attacker, :current_victim
   end
 
   def loser
-    [@player_1, @player_2].select { |player| player.hp == 0 } if game_over?
+    @current_attacker
   end
 
 end

@@ -38,7 +38,6 @@ post '/play' do
   @player_2_hp = $game.current_victim.hp
   @game_over = $game.game_over?
   @loser = $game.loser
-  p @loser
   erb :play
 end
 

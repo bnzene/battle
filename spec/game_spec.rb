@@ -33,9 +33,8 @@ describe Game do
 
   describe '#loser' do
     it 'returns name of the loser' do
-      allow(player_1).to receive(:hp)
-      allow(player_2).to receive(:hp).and_return(0)
-      expect(game.loser).to eq(player_2)
+      allow(game.current_attacker).to receive(:hp).and_return(0)
+      expect(game.loser).to eq(player_1)
     end
   end
 end
